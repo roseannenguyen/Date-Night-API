@@ -1,33 +1,10 @@
-var apiKey = "7-D4nAqKTqKGKyAhkEZhnzdFCzZ02Vigx-oRKe4i4WmREcgloB8n6nJr-qAG2B7xbtMxXC-3Dj2xTP-EUx4mDjeNaglMpCl8T9WnehSynk_6OtDL-jP1DmbNZUDeX3Yx"
-
-var yelp = require("yelp-fusion");
-var client = yelp.client(apiKey);
-
-client.allCategories().then(response => {
-  console.log(response.jsonBody.categories[0].alias);
-}).catch(e => {
-  console.log(e);
-});
+// movie user-input
 
 
-function allCategories(){
-    return this.send({
-      url: 'https://api.yelp.com/v3/categories',
-      bearerToken: this.apiKey
-    });
-  }
+var movieURL= "https://www.omdbapi.com/?t=starwars&apikey=trilogy"
 
-  function categoryDetails(alias){
-    return this.send({
-      url: 'https://api.yelp.com/v3/categories/{alias}',
-      urlParams:{
-        alias: alias
-      },
-      bearerToken: this.apiKey
-    });
-  }
+// call the other API instead, with ajax call and appropriate category
+
+// hard code one genre/ one yelp 
 
 
-// fetch()
-
-// https://www.yelp.com/developers/documentation/v3/all_category_list/categories.json
