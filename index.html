@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
-<link rel="stylesheet" href="style.css" >
+<link rel="stylesheet" href="assets/css/style.css" >
     <body> 
         <header>
             <img src="dn-idea5.jpg" alt="guy holding flowers" width="100%">
@@ -56,7 +56,7 @@
                         <li><a href="https://www.allprodad.com/date-night-planning-checklist/" target="_blank"><i class="fas fa-tasks"></i>&nbsp Date Night Planning Checklist</a></li>
                         <li><a href="https://www.kanopy.com/" target="_blank"><i class="fas fa-photo-video"></i>&nbsp Kanopy</a></li>
                         <li><a href="https://www.tcm.com/" target="_blank"><i class="fas fa-video"></i>&nbsp Turner Classic Movies</a></li>
-                        <li><a href="https://www.netflix.com/" target="_blank"><i class="fas fa-tv"></i>&nbsp NetFlix</a></li>
+                        <li><a href="https://www.netflix.com/" target="_blank"><i class="fas fa-tv"></i>&nbsp Netflix</a></li>
                         <li><a href="https://www.fandango.com/" target="_blank"><i class="fas fa-film"></i>&nbsp Fandango</a></li>
                     </ul> 
                     </div>
@@ -66,14 +66,13 @@
             <div class="w3-container w3-padding-64">
                 <div class="w3-row" id="movie-dinner-dump"> 
                     <div class="w3-col m4">
-                        <div class="w3-card" id="movie-view">
-                            <img src="movie2.jpg" class="w3-third"> 
-                            <div class="w3-xsmall w3-twothird w3-row-padding">
-                                <div>Rating: PG-13</div><br>
-                                <div>Plot: Short description of the movie.</div>
-                            </div>
-                        </div>
-                    </div><br>
+                        <div id="movie-image" class="w3-card" id="movie-view"> </div>
+                            
+                            <div id="movie-info" class="w3-xsmall w3-twothird w3-row-padding"> </div>
+                            
+                            
+                    </div>
+                    <br>
                     <div class="w3-col m8">
                         <ul class="w3-ul w3-card" id="dinner-view">
                             <li class="w3-bar">
@@ -102,8 +101,9 @@
                 </div> 
             </div>
         
-
-        <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 </html> 
 
