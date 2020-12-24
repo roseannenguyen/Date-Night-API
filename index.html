@@ -11,7 +11,7 @@
   
     <body> 
         <header> 
-            <img src="./assets/images/dn-idea5.jpg" alt="guy holding flowers" width="100%"> 
+            <img src="dn-idea5.jpg" alt="guy holding flowers" width="100%"> 
         </header> 
 
         <div class="w3-content" style="max-width:1400px">
@@ -46,6 +46,7 @@
                         <p><button class="w3-button w3-dark-grey" type="submit" id="getMovieDinnerInfo">Search</button></p>
                     </div>        
                 </div>  
+
                 <div class="w3-third"> 
                     <div class="w3-card w3-margin w3-margin-top w3-padding">
                         <h5 class="w3-padding-12 w3-center"><b>Helpful Links</b></h5>
@@ -63,7 +64,10 @@
             <div class="w3-row-padding" id="movie-dinner-dump">
                 <div class="w3-col l4 12 w3-padding-64"> 
                     <div class="w3-card w3-container w3-margin-bottom">
-                        <div class="w3-container w3-white" id="movie-view"></div> 
+                        <div class="w3-container w3-white" id="movie-view">
+                            <div id="movie-image"></div>
+                            <div id="movie-info"></div>
+                        </div> 
                     </div>               
                 </div>
                 <div class="w3-col l8 12 w3-padding-64"> 
@@ -72,7 +76,9 @@
             </div> 
 
         </div>
-        <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
     </body>
 </html> 
 
