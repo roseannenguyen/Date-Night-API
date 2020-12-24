@@ -5,14 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="./assets/css/style.css">
-  
-    <body> 
-        <header> 
-            <img src="dn-idea5.jpg" alt="guy holding flowers" width="100%"> 
-        </header> 
+
+<body>
+    <header>
+        <img src="dn-idea5.jpg" alt="guy holding flowers" width="100%">
+    </header>
 
         <div class="w3-content" style="max-width:1400px">
             <ul class="w3-row w3-container w3-padding-16 w3-small" id="intro">How to Use Date Night
@@ -28,19 +29,26 @@
                     <div class="w3-card w3-bar w3-padding-16 w3-center" id="input-header">
                         <p>Plan the perfect date night with dinner and a movie.</p>     
                     </div>
-                    <div class="w3-card w3-container w3-white w3-padding-16">
-                        <h3>Let's get started!</h3>
-                        <div class="w3-row-padding" style="margin:0 -16px;">
-                            <div class="w3-half">
-                                <label<b>A Movie</b></label>
-                                <p class="w3-small">Staying in or going out, find infomation on 1000's of titles</p>
-                                <input id="movie-input" class="w3-input w3-border" type="text" placeholder="Movie Title" required>
-                            </div>
-                            <div class="w3-half">
-                                <label<b>Dinner</b></label>
-                                <p class="w3-small">Our picks for top rated eateries in the area</p>
-                                <input id="zip-code-input" class="w3-input w3-border" type="text" placeholder="Zip Code" required>
-                            </div>
+                  
+                </div>
+            </div><br>
+            <div class="w3-col m8">
+                <ul class="w3-ul w3-card" id="dinner-view">
+                    <li class="w3-bar">
+                        <div id ="food-1"></div><!-- <img src="food1.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px"
+                            id="dinner1-img">
+                        <div class="w3-bar-item">
+                            <span class="w3-large" id="dinnername-1">Name</span><br>
+                            <p id="dinner1-details">Details about the restaurant and menu</p>
+                        </div> -->
+                    </li>
+                    <li class="w3-bar">
+                        <img src="food1.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px"
+                            id="dinner2-img">
+                        <div class="w3-bar-item">
+                            <span class="w3-large" id="dinnername-2">Name</span><br>
+                            <p id="dinner2-details">Details about the restaurant and menu</p>
+
                         </div>
                         <br>
                         <p><button class="w3-button w3-dark-grey" type="submit" id="getMovieDinnerInfo">Search</button></p>
