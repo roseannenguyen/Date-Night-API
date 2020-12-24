@@ -1,0 +1,63 @@
+*, *::before, *::after {
+	box-sizing: border-box; 
+	margin: 0;
+	padding: 0;
+}  
+
+body{
+    font-family:"Montserrat", sans-serif ;
+} 
+
+#header-img {
+    position: relative;
+} 
+
+#header-text {
+    font-size: 90px;
+}
+
+#logo {
+    position: absolute;
+    top: -115px;
+    left: 250px;
+}
+
+#input-header { 
+    background-color: #ad1457;
+    color: #fff;
+}  
+
+#how-to {
+    text-decoration: underline; 
+}
+
+#how-to-txt { 
+    text-align: left;
+    
+}
+
+#help {
+    color: #ad1457;
+    text-decoration: underline;
+    
+} 
+
+.fas {
+    color: #ad1457;
+}
+
+@media (max-width: 568px) {
+    
+    #header-text{
+        text-align: center;
+        font-size: 35px;
+    }
+
+    #logo {
+        height: 34px;
+        width: 34px;
+        top:-32px;
+        left: 90px;
+    }
+
+}
