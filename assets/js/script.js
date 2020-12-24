@@ -1,5 +1,5 @@
-$("#getMovieDinnerInfo").on("click", function (event) {
-    event.preventDefault();
+$("#getMovieDinnerInfo").on("click", function(event){
+event.preventDefault();  
 
     var movieTitle = $("#movie-input").val().trim();
     var queryURL = "http://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + "6cc7def2";
@@ -7,7 +7,7 @@ $("#getMovieDinnerInfo").on("click", function (event) {
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function (response) {
+    }).then(function(response){
 
         console.log(response);
 
@@ -41,9 +41,9 @@ $("#getMovieDinnerInfo").on("click", function (event) {
 // var baseURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=by-chloe&location=boston"
 
 function testYelp() {
-    var zipCode = $("#zip-code-input").val()
+var zipCode = $("#zip-code-input").val()
 
-    var baseURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?cc=US&location=" + zipCode + "&categories=restaurants"
+var baseURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?cc=US&location="+ zipCode +"&categories=restaurants"
     $.ajax({
         url: baseURL,
         headers: {
@@ -53,28 +53,35 @@ function testYelp() {
         dataType: 'json',
         success: function (data) {
             console.log('success: ' + data);
-          
-            $.each(data.businesses, function (i, item) {
-                // Store each business's object in a variable 
-                // var id = item.id;
-                // var alias = item.alias;
-                // var image = item.image_url;
-                var name = item.name;
-                // var rating = item.rating;
-                // var reviewcount = item.review_count;
-                // var address = item.location.address1;
-                // var city = item.location.city;
-                // var state = item.location.state;
-                // var zipcode = item.location.zip_code;
-                // // Append our result into our page
-                $('#dinnername-1').text(name[i]);
-                $('#dinnername-2').text(item.name[i]);
-                $('#dinnername-3').text(item.name[i]);
-                console.log(data.businesses)
-                //  $('#dinnername-1').text('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + image + '" style="width:200px;height:150px;"><br>We found <b>' + name + '</b> (' + alias + ')<br>Business ID: ' + id + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>The phone number for this business is: ' + phone + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>');
-            });
-        }
+            console.log(baseURL.headers)
+ // Grab the results from the API JSON return
+ var totalresults = data.total;
+ // If our results are greater than 0, continue
+ if (totalresults > 0){
+     // Display a header on the page with the number of results
+     $('#food-1').append('<h5>We discovered ' + totalresults + ' results!</h5>');
+     // Itirate through the JSON array of 'businesses' which was returned by the API
+    
+     $.each(data.businesses, function(i, item) {
+         // Store each business's object in a variable 
+         var id = item.id;
+         var alias = item.alias;
+         var image = item.image_url;
+         var name = item.name;
+         var rating = item.rating;
+         var reviewcount = item.review_count;
+         var address = item.location.address1;
+         var city = item.location.city;
+         var state = item.location.state;
+         var zipcode = item.location.zip_code;
+         // Append our result into our page
+         return($('#food-1').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + image + '" style="width:200px;height:150px;"><br>We found <b>' + name + '</b> (' + alias + ')<br>Business ID: ' + id + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>'));
+   });
+ 
+ }
 
+
+        }
     });
 
 }
