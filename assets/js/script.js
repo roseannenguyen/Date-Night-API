@@ -1,5 +1,22 @@
-$("#getMovieDinnerInfo").on("click", function (event) {
-    event.preventDefault();
+var foodChoices = {
+    Action: ["Hot dogs", "Sandwiches", "Burgers"],
+    Animation: ["Comfort food", "Pizza", "Fast food"],
+    Comedy: ["Burgers", "Fast food", "Mexican"],
+    Crime: ["Cheesesteaks", "Chicken Wings", "Fish & Chips"],
+    Drama: ["Soul food", "Soup", "Italian"],
+    Experimental: ["Japanese", "Latin American", "Seafood"],
+    Fantasy: ["Italian", "Pizza", "Noodles"],
+    Historical: ["French", "Steakhouses", "Cafes"],
+    Horror: ["Noodles", "Steakhouses", "Burgers"],
+    Romance: ["Cafes", "Italian", "French"],
+    Scifi: ["Chinese", "Hawaiian", "Japanese"],
+    Thriller: ["Pizza", "Noodles", "Japanese"],
+    Western: ["Diners", "Steakhouses", "Burgers"]
+}
+
+
+$("#getMovieDinnerInfo").on("click", function(event){
+event.preventDefault();  
 
     var movieTitle = $("#movie-input").val().trim();
     var queryURL = "http://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + "6cc7def2";
