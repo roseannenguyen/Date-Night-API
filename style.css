@@ -5,59 +5,83 @@
 }  
 
 body{
-    font-family:"Montserrat", sans-serif ;
-} 
-
-#header-img {
-    position: relative;
-} 
-
-#header-text {
-    font-size: 90px;
-}
-
-#logo {
-    position: absolute;
-    top: -115px;
-    left: 250px;
-}
-
-#input-header { 
-    background-color: #ad1457;
-    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    background-color:#dcdcdc ;
 }  
 
-#how-to {
-    text-decoration: underline; 
+.wrapper { 
+	padding: 75px 25px 0 25px; 
 }
 
-#how-to-txt { 
-    text-align: left;
-    
+.main {
+    margin: 0 auto;
+    /* padding: 20px; */
+	max-width: 800x;
+    height: auto;
+    background-color: #fdfdfd;
+	border: 1px solid #555252;
+	border-radius: 3px;
 }
+
+h1 {
+    font-size: 29px;
+}  
+
+
+#how-to {
+    color: #ad1457;
+} 
+ 
+#input-header { 
+    background-color: #ad1457;
+    font-size: 13px;
+    color: #fff;
+}   
 
 #help {
-    color: #ad1457;
+    color: #147cad;
     text-decoration: underline;
-    
 } 
 
-.fas {
-    color: #ad1457;
-}
 
-@media (max-width: 568px) {
-    
-    #header-text{
-        text-align: center;
-        font-size: 35px;
+@media (min-width: 1300px) {
+
+    .wrapper {
+        padding: 75px 250px 0 250px;
+    }  
+
+    #how-to-container {
+        margin-left: 125px;
+    } 
+
+    #input-main { 
+        margin: 5px 125px;
     }
 
-    #logo {
-        height: 34px;
-        width: 34px;
-        top:-32px;
-        left: 90px;
-    }
+    #movie-dinner-dump {
+        margin: 3px 125px;
+    } 
 
+    h1 {
+        font-size: 95px;
+        font-weight: bold;
+    } 
+
+    .text { 
+        font-size: 24px;
+    } 
+} 
+
+@media (max-width: 920px) {
+    .wrapper {
+        padding: 25px 25px 0 25px;
+    } 
+
+    h1 {
+        font-size: 29px;
+    } 
+
+    .text { 
+        font-size: x-small;
+    }
 }
