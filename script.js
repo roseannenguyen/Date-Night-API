@@ -97,7 +97,7 @@ function testYelp() {
             // If our results are greater than 0, continue
             if (totalresults > 0) {
                 // Display a header on the page with the number of results
-                $('#food-1').append('<h5 style="padding-left:35px";>Here are our dinner suggestions:</h5>');
+                $('#food-1').append('<h6 style="padding-left:35px;">Here are our dinner suggestions:</h6>');
                 // Itirate through the JSON array of 'businesses' which was returned by the API
 
                 $.each(data.businesses, function (i, item) {
@@ -117,7 +117,7 @@ function testYelp() {
                     var zipcode = item.location.zip_code;
                     // Append our result into our page
                      // Append our result into our page
-                     return ($('#food-1').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;margin-left:35px;"><img src="' + image + '" style="width:100px;height:95px;"><br> We found <b>' + name + '</b><br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br> This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')); 
+                     return ($('#food-1').append('<div id="' + id + '" style="margin-top:25px;margin-bottom:30px;margin-left:35px;font-size:13px;"><img src="' + image + '" style="width:100px;height:95px;"><br> We found <b>' + name + '</b><br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br> This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')); 
                     // NEED THIS SPECIFIC CLASS TO DISPLAY 
                     //  <div class="w3-card w3-container w3-margin w3-white">
                                 
@@ -125,7 +125,6 @@ function testYelp() {
             }
         }
     });
-
 }
 
 function renderInput() {
