@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Date Night</title>
+<title>DinnerMovieApp</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -8,85 +8,96 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
     integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="./assets/css/style.css">
-
-<body>
-    <header>
-        <img src="dn-idea5.jpg" alt="guy holding flowers" width="100%">
-    </header>
-
-        <div class="w3-content" style="max-width:1400px">
-            <ul class="w3-row w3-container w3-padding-16 w3-small" id="intro">How to Use Date Night
-                <li>Date Night is a "dinner and a movie" suggestion tool.  You pick a movie and we'll suggest a place for dinner. And not just any place,
-                    we scour through top-rated restaurants in the area to offer recommendations that are sure to impress.  After all, this is for date night!</li>
-                <li>Helpful Links can assist you in getting the where-when-and-how for the movie of your choice, especially if you're looking for oldies or a classic. </li>
-                <li> Now before you start your search, we also want to mention that Date Night is pretty handy when you're traveling. We locate eateries
-                    by zip code, so the Date Night app can help you locate good food across town or across the country. </li>
-            </ul> 
-
-            </div class="w3-row w3-container w3-padding-64">
-                <div class="w3-container w3-twothird">    
-                    <div class="w3-card w3-bar w3-padding-16 w3-center" id="input-header">
-                        <p>Plan the perfect date night with dinner and a movie.</p>     
+<link rel="stylesheet" href="./css/style.css">
+    <body>  
+        <div class="wrapper">
+            <div class="main-card"> 
+                <!-- slide show -->
+                <div class="mySlides w3-display-container w3-center">
+                    <img src="./images/date-night2.jpg" style="width:100%"> 
+                    <div class="w3-display-middle w3-text-white">
+                        <h1>DATE NIGHT</h1>
+                        <p class="text"><b>Plan the perfect date night</b></p>     
                     </div>
-                  
                 </div>
-            </div><br>
-            <div class="w3-col m8">
-                <ul class="w3-ul w3-card" id="dinner-view">
-                    <li class="w3-bar">
-                        <div id ="food-1"></div><!-- <img src="food1.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px"
-                            id="dinner1-img">
-                        <div class="w3-bar-item">
-                            <span class="w3-large" id="dinnername-1">Name</span><br>
-                            <p id="dinner1-details">Details about the restaurant and menu</p>
-                        </div> -->
-                    </li>
-                    <li class="w3-bar">
-                        <img src="food1.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px"
-                            id="dinner2-img">
-                        <div class="w3-bar-item">
-                            <span class="w3-large" id="dinnername-2">Name</span><br>
-                            <p id="dinner2-details">Details about the restaurant and menu</p>
+                <div class="mySlides w3-display-container w3-center">
+                    <img src="./images/go-out2.jpg" style="width:100%">
+                    <div class="w3-display-middle w3-text-white">
+                    <h1>GOING OUT</h1>
+                    <p class="text"><b>Discover top-rate eateries</b></p>    
+                    </div>
+                </div>
+                <div class="mySlides w3-display-container w3-center">
+                    <img src="./images/stay-in2.jpg" style="width:100%">
+                    <div class="w3-display-middle w3-text-white">
+                    <h1>STAYING IN</h1>
+                    <p class="text"><b>Get current or classic movies</b></p>    
+                    </div>
+                </div>
+                <!-- end slide show -->
+                <div class="w3-container w3-padding" id="how-to-container">
+                    <h6 id="how-to"><b>How Date Night Works</b></h6>
+                    <ul class="w3-row w3-container w3-small w3-left-align" id="how-to-txt"> 
+                        <li>You pick a movie and we'll suggest top-rated eateries in the area that are sure to impress.
+                            After all, it is for date night!</li><br>
+                        <li> Stay connected with Date Night no matter where you are. We locate eateries
+                            by zip code, so you can find good food across town or across the country.</li>
+                    </ul>  
+                </div>
 
+                <div class="w3-row w3-padding-16">
+                    <div class="w3-container" id="input-main-container">    
+                        <div class="w3-bar w3-padding-16 w3-center" id="input-header">
+                            <p><b>Plan the perfect date night with dinner and a movie.</b></p>     
                         </div>
-                        <br>
-                        <p><button class="w3-button w3-dark-grey" type="submit" id="getMovieDinnerInfo">Search</button></p>
-                    </div>        
+                        <div class="w3-card w3-container w3-white w3-padding-16" id="input-container">
+                            <h4>Let's get started!</h4>
+                            <div class="w3-row-padding" style="margin:0 -16px;">
+                                <div class="w3-half margin-bottom">
+                                    <label><b>A Movie</b></label>
+                                    <p class="w3-small">Find infomation on 1000's of titles.</p>
+                                    <input id="movie-input" class="w3-input w3-border" type="text" placeholder="Movie Title" required>
+                                </div>
+                                <div class="w3-half">
+                                    <label><b>Dinner</b></label>
+                                    <p class="w3-small">Our picks for top rated eateries in the area</p>
+                                    <input id="zip-code-input" class="w3-input w3-border" type="text" placeholder="Zip Code" required>
+                                </div>
+                            </div>
+                            <br>
+                            <p><button class="w3-button w3-dark-grey" type="submit" id="getMovieDinnerInfo">Search</button></p>
+                        </div>        
+                    </div>  
                 </div>  
 
-                <div class="w3-third"> 
-                    <div class="w3-card w3-margin w3-margin-top w3-padding">
-                        <h5 class="w3-padding-12 w3-center"><b>Helpful Links</b></h5>
-                        <ul class="w3-ul">
-                            <li><a href="https://www.allprodad.com/date-night-planning-checklist/" target="_blank"><i class="fas fa-tasks"></i>&nbsp Date Night Planning Checklist</a></li>
-                            <li><a href="https://www.kanopy.com/" target="_blank"><i class="fas fa-photo-video"></i>&nbsp Kanopy</a></li>
-                            <li><a href="https://www.tcm.com/" target="_blank"><i class="fas fa-video"></i>&nbsp Turner Classic Movies</a></li>
-                            <li><a href="https://www.netflix.com/" target="_blank"><i class="fas fa-tv"></i>&nbsp NetFlix</a></li>
-                            <li><a href="https://www.fandango.com/" target="_blank"><i class="fas fa-film"></i>&nbsp Fandango</a></li>
-                        </ul> 
+                <div class="w3-row" id="movie-dinner-dump">
+                    <div class="w3-half 12 w3-padding-64" id="movie-view"> 
+                        <!-- <div class="w3-card w3-container w3-margin w3-white"></div>  -->
+                        
+                        <div class="w3-row-padding" id="buttons"> 
+                            <div class="w3-btn w3-dark-grey w3-hide" type="search" data-btn="nowplaying">In Theaters</div>
+                            <div class="w3-btn w3-dark-grey w3-hide" type="search" data-btn="classics">Classic Movies</div>
+                            <div class="w3-btn w3-dark-grey w3-hide" type="search" data-btn="worldcinema">World Cinema</div>
+                        </div>
                     </div>
+                    <div class="w3-half w3-padding-64" id="food-1"> 
+                        <!-- <div class="w3-card w3-container w3-margin w3-white"></div> -->
+                    </div>         
                 </div>
-            </div>  
-
-            <div class="w3-row-padding" id="movie-dinner-dump">
-                <div class="w3-col l4 12 w3-padding-64"> 
-                    <div class="w3-card w3-container w3-margin-bottom">
-                        <div class="w3-container w3-white" id="movie-view">
-                            <div id="movie-image"></div>
-                            <div id="movie-info"></div>
-                        </div> 
-                    </div>               
-                </div>
-                <div class="w3-col l8 12 w3-padding-64"> 
-                    <div class="w3-card w3-container w3-margin w3-white" id="dinnier-view"></div> 
-                </div>         
+                <div class="w3-container" id="footer">
+                    <div class="w3-panel inline social-buttons">
+                        <a href="https://github.com/roseannenguyen/Date-Night-API" target="_blank"><i class="fab fa-github-square"2x></i></a>
+                        <a href="mailto:datenightapp@mail.com" target="_blank"><i class="fas fa-envelope-square"></i></a>
+                        <a href="https://twitter.com/intent/tweet?button_hashtag=Date_Night_&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #Date_Night_</a>
+                    </div> 
+                  </div> 
             </div> 
-
         </div>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    </body>
-</html> 
 
+        
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script src="./js/script.js"></script>
+    </body>
+</html>  
