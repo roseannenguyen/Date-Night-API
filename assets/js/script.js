@@ -124,6 +124,8 @@ function getYelp() {
 
 }
 
+
+
 // draft code. Might have to call both queryurl again 
 // function compareTest() {
 //     var genreType = response.genre
