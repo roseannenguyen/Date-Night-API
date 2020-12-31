@@ -1,3 +1,6 @@
+
+
+
 var foodChoices = {
     Action: ["Hot dogs", "Sandwiches", "Burgers"],
     Animation: ["Comfort food", "Pizza", "Fast food"],
@@ -14,9 +17,14 @@ var foodChoices = {
     Western: ["Diners", "Steakhouses", "Burgers"]
 }
 
+$("#getMovieDinnerInfo").on("click", function () {
+    event.preventDefault();
+    getYelp()
+    getMovie()
+    renderInput()
 
-$("#getMovieDinnerInfo").on("click", function(event){
-event.preventDefault();  
+})
+function getMovie() {
 
     var movieTitle = $("#movie-input").val().trim();
     var queryURL = "http://www.omdbapi.com/?t=" + movieTitle + "&apikey=" + "6cc7def2";
@@ -42,7 +50,7 @@ event.preventDefault();
         movieInfoDisplay.append(releaseInfo);
         movieInfoDisplay.append(ratingInfo);
 
-        $("#movie-info").append(movieInfoDisplay);
+        $("#movie-view").append(movieInfoDisplay);
 
         var movieImgDisplay = $("<div>");
 
@@ -50,15 +58,14 @@ event.preventDefault();
         var img = $("<img>").attr("src", imgURL);
         movieImgDisplay.append(img);
 
-        $("#movie-image").prepend(movieImgDisplay);
+        $("#movie-view").prepend(movieImgDisplay);
 
     })
-});
+};
 
-// var baseURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=by-chloe&location=boston"
 
-function testYelp() {
-    var zipCode = $("#zip-code-input").val()
+function getYelp() {
+    var zipCode = $("#zip-code-input").val().trim();
 
     var baseURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?cc=US&location=" + zipCode + "&categories=restaurants"
     $.ajax({
@@ -77,7 +84,7 @@ function testYelp() {
             // If our results are greater than 0, continue
             if (totalresults > 0) {
                 // Display a header on the page with the number of results
-                $('#food-1').append('<h5>We discovered ' + totalresults + ' results!</h5>');
+                $('#food-1').append('<h5>We discovered ' + totalresults + ' results! Below are our top 3 recommendations:</h5>');
                 // Itirate through the JSON array of 'businesses' which was returned by the API
 
                 $.each(data.businesses, function (i, item) {
@@ -110,12 +117,7 @@ $("#food-1").empty()
 $("getMovieDinnerInfo").empty()
 }
 
-$("#getMovieDinnerInfo").on("click", function (event) {
-    event.preventDefault();
-    testYelp()
-    renderInput()
 
-})
 
 
 
