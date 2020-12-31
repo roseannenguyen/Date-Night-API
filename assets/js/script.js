@@ -101,14 +101,21 @@ function getYelp() {
                     var image = item.image_url;
                     var name = item.name;
                     var category = item.categories[0].title
+
                     var rating = item.rating;
                     var reviewcount = item.review_count;
+
                     var address = item.location.address1;
                     var city = item.location.city;
                     var state = item.location.state;
                     var zipcode = item.location.zip_code;
-                    // Append our result into our page
-                    return ($('#food-1').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;justify-content: center;"><img src="' + image + '" style="width:200px;height:150px;justify-content: center;"><br>We found <b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>'));
+                    // Append our result into our page. Easier to call on one call for Yelp API.
+                    return ($('#food-1').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;justify-content: center;"><img src="' + image + '" style="width:200px;height:150px;justify-content: center;"><br>We found <b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>')
+                    
+                    
+                    );
+                
+                
                 });
 
             }
@@ -117,7 +124,7 @@ function getYelp() {
 
 }
 
-// draft code
+// draft code. Might have to call both queryurl again 
 // function compareTest() {
 //     var genreType = response.genre
 
