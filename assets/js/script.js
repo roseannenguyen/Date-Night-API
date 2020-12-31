@@ -17,7 +17,7 @@ var foodChoices = {
     Western: ["Diners", "Steakhouses", "Burgers"]
 }
 
-$("#getMovieDinnerInfo").on("click", function () {
+$("#getMovieDinnerInfo").on("click", function (event) {
     event.preventDefault();
     getYelp()
     getMovie()
@@ -41,13 +41,16 @@ function getMovie() {
         var plot = response.Plot;
         var released = response.Released;
         var rating = response.Rated;
+        var genre = response.Genre
 
         var plotInfo = $("<p>").text("Plot: " + plot);
         var releaseInfo = $("<p>").text("Released: " + released);
+        var genreInfo = $("<p>").text("Genre: " + genre);
         var ratingInfo = $("<p>").text("Rating: " + rating);
 
         movieInfoDisplay.append(plotInfo);
         movieInfoDisplay.append(releaseInfo);
+        movieInfoDisplay.append(genreInfo);
         movieInfoDisplay.append(ratingInfo);
 
         $("#movie-view").append(movieInfoDisplay);
@@ -64,6 +67,8 @@ function getMovie() {
 };
 
 
+
+
 function getYelp() {
     var zipCode = $("#zip-code-input").val().trim();
 
@@ -78,7 +83,7 @@ function getYelp() {
         dataType: 'json',
         success: function (data) {
             console.log('success: ' + data);
-
+            console.log(data)
             // Grab the results from the API JSON return
             var totalresults = data.total;
             // If our results are greater than 0, continue
@@ -93,9 +98,9 @@ function getYelp() {
                     }
 
                     var id = item.id;
-                    var alias = item.alias;
                     var image = item.image_url;
                     var name = item.name;
+                    var category = item.categories[0].title
                     var rating = item.rating;
                     var reviewcount = item.review_count;
                     var address = item.location.address1;
@@ -103,7 +108,7 @@ function getYelp() {
                     var state = item.location.state;
                     var zipcode = item.location.zip_code;
                     // Append our result into our page
-                    return ($('#food-1').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + image + '" style="width:200px;height:150px;"><br>We found <b>' + name + '</b> (' + alias + ')<br>Business ID: ' + id + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>'));
+                    return ($('#food-1').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;justify-content: center;"><img src="' + image + '" style="width:200px;height:150px;justify-content: center;"><br>We found <b>' + name + ' under ' + category + ' Category</b> <br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>'));
                 });
 
             }
@@ -112,9 +117,22 @@ function getYelp() {
 
 }
 
+// draft code
+// function compareTest() {
+//     var genreType = response.genre
+
+// if (genreType === action) {
+//     append food category
+// }
+
+// }
+
+
+
 function renderInput() {
-$("#food-1").empty()
-$("getMovieDinnerInfo").empty()
+    $("#food-1").empty()
+    $("#movie-view").empty()
+    $("getMovieDinnerInfo").empty()
 }
 
 
